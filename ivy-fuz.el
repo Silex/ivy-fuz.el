@@ -61,7 +61,7 @@ slower but return better result than clangd's."
 (defcustom ivy-fuz-sort-limit 5000
   "The limitaition for fuzzy sorting.
 
-Set to `nil' will sort all matched candidates."
+Set to nil will sort all matched candidates."
   :type '(choice
           (const :tag "Unlimited" nil)
           integer)
@@ -72,9 +72,7 @@ Set to `nil' will sort all matched candidates."
 ;;; Utils
 
 (define-inline ivy-fuz--fuzzy-score (pattern str)
-  "Calc the fuzzy match score of STR with PATTERN.
-
-Sign: (-> Str Str Long)"
+  "Calc the fuzzy match score of STR with PATTERN."
   (inline-quote
    (or (pcase-exhaustive ivy-fuz-sorting-method
          (`clangd (fuz-calc-score-clangd ,pattern ,str))
@@ -82,18 +80,14 @@ Sign: (-> Str Str Long)"
        most-negative-fixnum)))
 
 (define-inline ivy-fuz--fuzzy-indices (pattern str)
-  "Return all char positions where STR fuzzy matched with PATTERN.
-
-Sign: (-> Str Str (Option (Listof Long)))"
+  "Return all char positions where STR fuzzy matched with PATTERN."
   (inline-quote
    (pcase-exhaustive ivy-fuz-sorting-method
      (`clangd (fuz-find-indices-clangd ,pattern ,str))
      (`skim (fuz-find-indices-skim ,pattern ,str)))))
 
 (defun ivy-fuz--get-score-data (pattern cand)
-  "Return (LENGTH SCORE) by matching CAND with PATTERN.
-
-Sign: (-> Str Str (List Long Long))"
+  "Return (LENGTH SCORE) by matching CAND with PATTERN."
   (let ((len (length cand)))
     ;; FIXME: Short pattern may have higher score matching longer pattern
     ;; than exactly matching itself
@@ -110,9 +104,7 @@ Sign: (-> Str Str (List Long Long))"
 
 ;;;###autoload
 (defun ivy-fuz-sort-fn (pattern cands)
-  "The entry of the package.
-
-Sign: (-> Str (Listof Str) (Listof Str))"
+  "Sort CANDS according to PATTERN."
   (condition-case nil
       (let* ((bolp (string-prefix-p "^" pattern))
              (realpat (if bolp (substring pattern 1) pattern))
@@ -140,9 +132,7 @@ Sign: (-> Str (Listof Str) (Listof Str))"
 
 ;;;###autoload
 (defun ivy-fuz-highlight-fn (str)
-  "Put highlight face on matched positions of the STR.
-
-Sign: (-> Str Str)"
+  "Put highlight face on matched positions of the STR."
   (let* ((pat (ivy--remove-prefix "^" ivy-text))
          (indices (ivy-fuz--fuzzy-indices pat str))
          (counter 0)
