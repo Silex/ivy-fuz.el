@@ -157,8 +157,8 @@ Sign: (-> Str Str)"
 
 (provide 'ivy-fuz)
 
+;;; ivy-fuz.el ends here
+
 ;; Local Variables:
 ;; coding: utf-8
 ;; End:
-
-;; ivy-fuz.el ends here.
