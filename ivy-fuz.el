@@ -1,9 +1,8 @@
 ;;; ivy-fuz.el --- Integrate Ivy and Fuz -*- lexical-binding: t -*-
 
-;; Copyright (C) 2019 Zhu Zihao
-
 ;; Author: Zhu Zihao <all_but_last@163.com>
-;; URL: https://github.com/cireu/fuz.el
+;; Maintainer: Philippe Vaucher <philippe.vaucher@gmail.com>
+;; URL: https://github.com/Silex/ivy-fuz.el
 ;; Version: 1.3.0
 ;; Package-Requires: ((emacs "25.1") (fuz "1.3.0") (ivy "0.13.0"))
 ;; Keywords: convenience
