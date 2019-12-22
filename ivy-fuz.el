@@ -1,4 +1,4 @@
-;;; ivy-fuz.el --- Integrate Ivy and Fuz -*- lexical-binding: t -*-
+;;; ivy-fuz.el --- Integration between fuz and ivy. -*- lexical-binding: t -*-
 
 ;; Author: Zhu Zihao <all_but_last@163.com>
 ;; Maintainer: Philippe Vaucher <philippe.vaucher@gmail.com>
@@ -24,11 +24,7 @@
 
 ;;; Commentary:
 
-;; API:
-
-;; - `ivy-fuz-sort-fn' :: The main entry of sorting method.
-;; - `ivy-fuz-regex-fuzzy' :: An alias of `ivy--regex-fuzzy', just identifier.
-;; - `ivy-fuz-highlight-fn' :: The highlighter for fuzzy matched candidates.
+;; Integration between fuz and ivy.
 
 ;;; Code:
 
