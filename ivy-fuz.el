@@ -3,7 +3,7 @@
 ;; Author: Zhu Zihao <all_but_last@163.com>
 ;; Maintainer: Philippe Vaucher <philippe.vaucher@gmail.com>
 ;; URL: https://github.com/Silex/ivy-fuz.el
-;; Version: 1.3.0
+;; Version: 1.0.0
 ;; Package-Requires: ((emacs "25.1") (fuz "1.3.0") (ivy "0.13.0"))
 ;; Keywords: convenience
 
